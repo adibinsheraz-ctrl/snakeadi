@@ -1,6 +1,4 @@
-'use client';
-
-import { useRef } from 'react';
+import Link from 'next/link';
 import { Hero } from '@/components/landing/Hero';
 import { motion } from 'framer-motion';
 
@@ -194,7 +192,7 @@ export default function Home() {
             Jump into the arena and compete for the top spot on the leaderboard.
           </p>
           <button
-            onClick={scrollToGame}
+            onClick={() => window.location.href = '/game'}
             className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-lg font-bold hover:shadow-xl hover:shadow-purple-500/50 transition transform hover:scale-105"
           >
             Start Playing Now
