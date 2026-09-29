@@ -1,0 +1,38 @@
+---
+name: snake-arena-phase-5-testing
+description: Phase 5 complete — Vitest unit tests for game engine, Playwright E2E tests (landing, docs, accessibility, mobile 360px, performance), Lighthouse Core Web Vitals checks, security headers validation.
+metadata:
+  type: project
+  priority: 5
+---
+
+# Phase 5: Quality & Testing
+
+**Status**: ✅ Complete
+**Files Created**:
+- `vitest.config.ts` — Test runner configuration
+- `vitest.setup.ts` — Test environment setup
+- `lib/game/engine.test.ts` — 30+ unit tests for SnakeEngine
+- `tests/e2e/app.spec.ts` — 9 E2E tests (landing, docs, accessibility, mobile, performance, console errors)
+- `tests/e2e/lighthouse.spec.ts` — 8 Lighthouse performance audit tests
+
+**Test Coverage**:
+- ✅ Engine initialization and state management
+- ✅ Game controls (start, pause, resume, direction)
+- ✅ Settings persistence (sound, haptics, reduced motion, colorblind)
+- ✅ Skin/theme unlock system
+- ✅ Subscriber notifications
+- ✅ Landing page visibility
+- ✅ Docs navigation and Ask the Docs modal
+- ✅ Mobile responsiveness (360px viewport)
+- ✅ Accessibility (heading hierarchy, main landmark)
+- ✅ Core Web Vitals (LCP < 2.5s, FCP < 1.8s, CLS < 0.1)
+- ✅ Security headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy)
+- ✅ Load time < 3 seconds
+- ✅ No console errors
+
+**Smart Defaults Applied**:
+- Vitest for unit tests (fast, modern, ESM)
+- Playwright for E2E (cross-browser, performance metrics)
+- Tests run against localhost:3000 (dev server assumed running)
+- Manual Lighthouse report generation (integrated with build pipeline in Phase 6)

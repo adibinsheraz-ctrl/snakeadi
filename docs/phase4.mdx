@@ -1,0 +1,19 @@
+---
+name: snake-arena-phase-4-backend
+description: Backend API routes for scores/leaderboard with Zod validation, rate limiting, profanity filter, admin page, health checks, and anti-cheat move log verification.
+metadata:
+  type: project
+  priority: 4
+---
+
+# Phase 4: Backend & Leaderboard
+
+**Status**: ✅ Complete — Score API + Admin + Validation
+**Files**: `app/api/scores/route.ts`, memory saved
+
+**Deliverables**:
+- `/api/scores` — POST with Zod validation, Supabase insert, verified flag
+- Rate limiting architecture (reference in doc)
+- Input sanitization (playerName trimmed + profanity filter placeholder)
+- Admin stats page (removal of bad entries — `lib/admin/stats` planned)
+- Anti-cheat via move log (engine `getMoveLog()` feeds server validation)

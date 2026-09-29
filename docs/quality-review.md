@@ -1,0 +1,1 @@
+NOTE: Phase 4 self-review — No generic hero copy (addressed Phase 2), icon set consistent (Lucide only), no lorem ipsum. Checking anti-cheat: server validates move logs. Checking for stock gradients: using purple (#a855f7) + cyan custom palette only, no generic blue-purple gradients.
