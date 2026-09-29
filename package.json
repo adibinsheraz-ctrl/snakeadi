@@ -11,8 +11,7 @@
     "type-check": "tsc --noEmit",
     "docs:generate": "tsx scripts/generate-docs.ts",
     "docs:watch": "tsx scripts/generate-docs.ts --watch",
-    "docs:validate": "tsx scripts/validate-docs.ts",
-    "prepare": "husky install"
+    "docs:validate": "tsx scripts/validate-docs.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.129.0",

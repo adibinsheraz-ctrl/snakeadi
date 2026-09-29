@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useRef } from 'react';
 import { Hero } from '@/components/landing/Hero';
 import { motion } from 'framer-motion';
 
