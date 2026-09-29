@@ -3,10 +3,9 @@
 import { useRef, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
-import * as THREE from 'three';
 import { useGameEngine } from '@/lib/hooks/useGameEngine';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Volume2, VolumeX, Zap, Pause, Play, RotateCcw, Settings, Menu } from 'lucide-react';
+import { Volume2, VolumeX, Play, RotateCcw, Settings } from 'lucide-react';
 
 export function GameCanvas() {
   const {
@@ -29,7 +28,6 @@ export function GameCanvas() {
   } = useGameEngine();
 
   const [showSettings, setShowSettings] = useState(false);
-  const [showControls, setShowControls] = useState(false);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
   // Handle swipe gestures
@@ -449,7 +447,7 @@ export function GameCanvas() {
                     <input
                       type="checkbox"
                       checked={state.hapticsEnabled}
-                      onChange={(e) => toggleHaptics()}
+                      onChange={() => toggleHaptics()}
                       className="w-4 h-4"
                     />
                     <span className="text-sm">Haptic Feedback</span>

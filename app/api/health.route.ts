@@ -1,12 +1,22 @@
 'use server';
 
 import { NextResponse } from 'next/server';
+import { createClient } from '@/lib/supabase/client';
 
 export async function GET() {
   try {
     const startTime = Date.now();
 
-    const health: any = {
+    const health: {
+      status: string;
+      timestamp: string;
+      uptime: number;
+      memory: NodeJS.MemoryUsage;
+      version: string;
+      environment: string;
+      checks: Record<string, string>;
+      responseTime?: number;
+    } = {
       status: 'ok',
       timestamp: new Date().toISOString(),
       uptime: process.uptime(),
@@ -22,11 +32,10 @@ export async function GET() {
 
     // Try to check database connection
     try {
-      const { createClient } = require('@/lib/supabase/client');
       const supabase = createClient();
       const { error } = await supabase.from('leaderboard').select('count', { count: 'exact', head: true });
       health.checks.database = error ? 'error' : 'ok';
-    } catch (dbError) {
+    } catch {
       health.checks.database = 'error';
     }
 

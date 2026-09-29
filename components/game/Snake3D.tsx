@@ -1,19 +1,11 @@
 'use client';
-import { useRef, useMemo } from 'react';
+import { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 export function Snake3DScene() {
   const meshRef = useRef<THREE.Mesh>(null);
-
-  const points = useMemo(() => {
-    const pts = [];
-    for (let i = 0; i < 20; i++) {
-      pts.push([Math.sin(i * 0.3) * 3, Math.cos(i * 0.2) * 2, i * 0.5]);
-    }
-    return pts;
-  }, []);
 
   return (
     <Canvas camera={{ position: [0, 5, 10], fov: 50 }} dpr={[1, 2]}>

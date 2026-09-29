@@ -37,9 +37,10 @@ test.describe('Lighthouse Performance Audit', () => {
     const cls = await page.evaluate(() => {
       let cls = 0;
       const observer = new PerformanceObserver((list) => {
-        list.getEntries().forEach((entry: any) => {
-          if (!entry.hadRecentInput) {
-            cls += entry.value;
+        list.getEntries().forEach((entry: PerformanceEntry) => {
+          const layoutEntry = entry as unknown as { hadRecentInput?: boolean; value?: number };
+          if (!layoutEntry.hadRecentInput) {
+            cls += layoutEntry.value || 0;
           }
         });
       });

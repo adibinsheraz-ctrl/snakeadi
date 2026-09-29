@@ -13,7 +13,6 @@ import type {
   PowerUp,
   MoveLogEntry,
   SnakeSegment,
-  Vector2,
 } from './types';
 import {
   GAME_CONFIG,

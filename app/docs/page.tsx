@@ -8,14 +8,14 @@ export default async function DocsPage() {
   const indexPath = path.join(docsDir, 'phase1.mdx');
 
   let content = '';
-  let frontmatter: any = {};
+  let frontmatter: Record<string, string | undefined> = {};
 
   try {
     const fileContent = fs.readFileSync(indexPath, 'utf8');
     const { data, content: mdxContent } = matter(fileContent);
-    frontmatter = data;
+    frontmatter = data as Record<string, string | undefined>;
     content = mdxContent;
-  } catch (error) {
+  } catch {
     content = `
 # Welcome to Snake Arena Documentation
 

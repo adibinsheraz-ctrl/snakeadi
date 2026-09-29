@@ -1,15 +1,14 @@
 'use client';
 
-import Link from 'next/link';
-import { useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import { Hero } from '@/components/landing/Hero';
 import { motion } from 'framer-motion';
 
 export default function Home() {
-  const gameRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const scrollToGame = () => {
-    gameRef.current?.scrollIntoView({ behavior: 'smooth' });
+    router.push('/game');
   };
 
   return (
@@ -20,7 +19,7 @@ export default function Home() {
       </section>
 
       {/* Game Preview Section */}
-      <section ref={gameRef} className="relative min-h-screen w-full bg-gradient-to-b from-black via-purple-950 to-black px-4 py-20">
+      <section className="relative min-h-screen w-full bg-gradient-to-b from-black via-purple-950 to-black px-4 py-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -195,7 +194,7 @@ export default function Home() {
             Jump into the arena and compete for the top spot on the leaderboard.
           </p>
           <button
-            onClick={() => window.location.href = '/game'}
+            onClick={scrollToGame}
             className="px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-lg font-bold hover:shadow-xl hover:shadow-purple-500/50 transition transform hover:scale-105"
           >
             Start Playing Now

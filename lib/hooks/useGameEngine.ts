@@ -5,7 +5,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { GameState, Direction, GameMode, Difficulty } from '@/lib/game/types';
-import { SnakeEngine, getEngine, resetEngine } from '@/lib/game/engine';
+import { SnakeEngine, getEngine } from '@/lib/game/engine';
 
 export function useGameEngine() {
   const [state, setState] = useState<GameState>(() => {

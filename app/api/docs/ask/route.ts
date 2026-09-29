@@ -21,7 +21,7 @@ function loadDocsContext(): string {
         context += `\n## ${file}\n${content}\n`;
       }
     }
-  } catch (error) {
+  } catch {
     context += 'Documentation files not found.';
   }
 

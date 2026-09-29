@@ -1,6 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { SnakeEngine } from '@/lib/game/engine';
-import type { GameState } from '@/lib/game/types';
 
 describe('SnakeEngine', () => {
   let engine: SnakeEngine;
